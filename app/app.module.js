@@ -1,4 +1,4 @@
-System.register(["@angular/core", "@angular/platform-browser", './components/reddit.component', './components/reddit-article.component', './services/article.service', './services/backend.service', './components/completed-list.component'], function(exports_1, context_1) {
+System.register(["@angular/core", "@angular/platform-browser", './components/todo.component', './components/todo-article.component', './services/article.service', './services/backend.service', './components/completed-list.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,8 +10,8 @@ System.register(["@angular/core", "@angular/platform-browser", './components/red
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, platform_browser_1, reddit_component_1, reddit_article_component_1, article_service_1, backend_service_1, completed_list_component_1;
-    var RedditAppModule;
+    var core_1, platform_browser_1, todo_component_1, todo_article_component_1, article_service_1, backend_service_1, completed_list_component_1;
+    var TodoAppModule;
     return {
         setters:[
             function (core_1_1) {
@@ -20,11 +20,11 @@ System.register(["@angular/core", "@angular/platform-browser", './components/red
             function (platform_browser_1_1) {
                 platform_browser_1 = platform_browser_1_1;
             },
-            function (reddit_component_1_1) {
-                reddit_component_1 = reddit_component_1_1;
+            function (todo_component_1_1) {
+                todo_component_1 = todo_component_1_1;
             },
-            function (reddit_article_component_1_1) {
-                reddit_article_component_1 = reddit_article_component_1_1;
+            function (todo_article_component_1_1) {
+                todo_article_component_1 = todo_article_component_1_1;
             },
             function (article_service_1_1) {
                 article_service_1 = article_service_1_1;
@@ -37,14 +37,14 @@ System.register(["@angular/core", "@angular/platform-browser", './components/red
             }],
         execute: function() {
             // import { Logger }              from './logger.service';
-            RedditAppModule = (function () {
-                function RedditAppModule() {
+            TodoAppModule = (function () {
+                function TodoAppModule() {
                 }
-                RedditAppModule = __decorate([
+                TodoAppModule = __decorate([
                     core_1.NgModule({
                         declarations: [
-                            reddit_component_1.RedditApp,
-                            reddit_article_component_1.ArticleComponent,
+                            todo_component_1.TodoApp,
+                            todo_article_component_1.TodoArticleComponent,
                             completed_list_component_1.CompletedListComponent
                         ],
                         providers: [
@@ -52,13 +52,13 @@ System.register(["@angular/core", "@angular/platform-browser", './components/red
                             article_service_1.ArticleService
                         ],
                         imports: [platform_browser_1.BrowserModule],
-                        bootstrap: [reddit_component_1.RedditApp]
+                        bootstrap: [todo_component_1.TodoApp]
                     }), 
                     __metadata('design:paramtypes', [])
-                ], RedditAppModule);
-                return RedditAppModule;
+                ], TodoAppModule);
+                return TodoAppModule;
             }());
-            exports_1("RedditAppModule", RedditAppModule);
+            exports_1("TodoAppModule", TodoAppModule);
         }
     }
 });

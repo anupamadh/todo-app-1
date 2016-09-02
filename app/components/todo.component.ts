@@ -1,11 +1,11 @@
 // import { ArticleComponent } from './reddit-article.component'
-import { Article } from '../article' ;
+import { Item } from '../item' ;
 import { Component } from '@angular/core';
 import { ArticleService } from '../services/article.service';
 import { OnInit } from '@angular/core';
 
 @Component({
-    selector: 'reddit',
+    selector: 'todo',
     template: `
     <form class="ui large form segment">
       <h3 class="ui header">Add a Link</h3>
@@ -22,24 +22,24 @@ import { OnInit } from '@angular/core';
     </form>
     <div class="ui grid posts">
       <h2> We just started</h2>
-      <reddit-article *ngFor = "let foobar of sortedArticles()" [article] = "foobar">
-      </reddit-article>
+      <todo-article *ngFor = "let foobar of items" [item] = "foobar">
+      </todo-article>
     </div>
     <div class="ui grid posts">
       <h2> We are good</h2>
-      <completed-list *ngFor = "let foobar of sortedArticles()" [article] = "foobar">
+      <completed-list *ngFor = "let foobar of items" [item] = "foobar">
       </completed-list>
     </div>
 `,
 providers: [ArticleService]
 })
-export class RedditApp implements OnInit{
+export class TodoApp implements OnInit{
 
-    articles: Article[];
+    items: Item[];
 
     addArticle(title: HTMLInputElement): void {
         console.log(`Adding article title: ${title.value}`);
-        this.articles.push(new Article(title.value, false ,0));
+        this.items.push(new Item(title.value, false));
         title.value = '';
       
     }
@@ -47,15 +47,12 @@ export class RedditApp implements OnInit{
     constructor(private _articleService: ArticleService){
       
     }
-    sortedArticles(): Article[] {
-      console.log("this.articles: ", this.articles);
-return this.articles.sort((a: Article, b: Article) => b.votes - a.votes);
-}
+
 
 
 
 ngOnInit() {
-  this.articles = this._articleService.getArticles();
+  this.items = this._articleService.getArticles();
 }
 
 

@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
-import {Article} from '../article' ;
+import {Item} from '../item' ;
 
 @Component({
     selector: 'completed-list',
-    inputs: ['article'],
+    inputs: ['item'],
     host: {
         class: 'row'
     },
     template: `
   
-    <div class="twelve wide column" *ngIf="article.completed===true">
+    <div class="twelve wide column" *ngIf="item.completed===true">
       <a class="ui large header">
-        {{ article.title }}
+        {{ item.title }}
       </a>
     </div> `
 })

@@ -1,4 +1,4 @@
-System.register(['@angular/core', '../article'], function(exports_1, context_1) {
+System.register(['@angular/core', '../item'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,29 +10,29 @@ System.register(['@angular/core', '../article'], function(exports_1, context_1) 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, article_1;
-    var ARTICLES, BackendService;
+    var core_1, item_1;
+    var ITEMS, BackendService;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (article_1_1) {
-                article_1 = article_1_1;
+            function (item_1_1) {
+                item_1 = item_1_1;
             }],
         execute: function() {
-            ARTICLES = [
-                new article_1.Article('Angular 2', false, 3),
-                new article_1.Article('Fullstack', false, 2),
-                new article_1.Article('Angular Homepage', false, 1)
+            ITEMS = [
+                new item_1.Item('Angular 2', false),
+                new item_1.Item('Fullstack', false),
+                new item_1.Item('Angular Homepage', false)
             ];
             BackendService = (function () {
                 function BackendService() {
                 }
                 BackendService.prototype.getAll = function (type) {
-                    if (type === article_1.Article) {
+                    if (type === item_1.Item) {
                         // TODO get from the database
-                        return Promise.resolve(ARTICLES);
+                        return Promise.resolve(ITEMS);
                     }
                     var err = new Error('Cannot get object of this type');
                     // this.logger.error(err);

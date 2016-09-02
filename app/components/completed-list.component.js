@@ -24,11 +24,11 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                 CompletedListComponent = __decorate([
                     core_1.Component({
                         selector: 'completed-list',
-                        inputs: ['article'],
+                        inputs: ['item'],
                         host: {
                             class: 'row'
                         },
-                        template: "\n  \n    <div class=\"twelve wide column\" *ngIf=\"article.completed===true\">\n      <a class=\"ui large header\">\n        {{ article.title }}\n      </a>\n    </div> "
+                        template: "\n  \n    <div class=\"twelve wide column\" *ngIf=\"item.completed===true\">\n      <a class=\"ui large header\">\n        {{ item.title }}\n      </a>\n    </div> "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], CompletedListComponent);

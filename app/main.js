@@ -11,7 +11,7 @@ System.register(["@angular/platform-browser-dynamic", './app.module'], function(
                 app_module_1 = app_module_1_1;
             }],
         execute: function() {
-            platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.RedditAppModule);
+            platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.TodoAppModule);
         }
     }
 });

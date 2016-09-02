@@ -1,11 +1,11 @@
 import { Injectable, Type } from '@angular/core';
 // import { Logger } from './logger.service';
-import { Article } from '../article';
+import { Item } from '../item';
 
-const ARTICLES = [
-     new Article('Angular 2', false, 3),
-    new Article('Fullstack', false, 2),
-    new Article('Angular Homepage', false, 1)
+const ITEMS = [
+     new Item('Angular 2', false),
+    new Item('Fullstack', false),
+    new Item('Angular Homepage', false)
       ];
 
 @Injectable()
@@ -13,9 +13,9 @@ export class BackendService {
   constructor() {}
 
   getAll(type: Type): PromiseLike<any[]> {
-    if (type === Article) {
+    if (type === Item) {
       // TODO get from the database
-      return Promise.resolve<Article[]>(ARTICLES);
+      return Promise.resolve<Item[]>(ITEMS);
     }
     let err = new Error('Cannot get object of this type');
     // this.logger.error(err);

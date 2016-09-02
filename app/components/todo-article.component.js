@@ -11,31 +11,31 @@ System.register(['@angular/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var ArticleComponent;
+    var TodoArticleComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            ArticleComponent = (function () {
-                function ArticleComponent() {
+            TodoArticleComponent = (function () {
+                function TodoArticleComponent() {
                 }
-                ArticleComponent.prototype.setCompleted = function (article, checked) {
-                    article.completed = checked;
+                TodoArticleComponent.prototype.setCompleted = function (item, checked) {
+                    item.completed = checked;
                 };
-                ArticleComponent = __decorate([
+                TodoArticleComponent = __decorate([
                     core_1.Component({
-                        selector: 'reddit-article',
-                        inputs: ['article'],
+                        selector: 'todo-article',
+                        inputs: ['item'],
                         host: { class: 'row' },
-                        template: "\n<div class=\"twelve wide column\" *ngIf=\"article.completed===false\" #myElement>\n  <a class=\"ui large header\" href=\"{{ article.link }}\">\n        {{ article.title }}\n      </a>\n  <!-- right here -->\n  <div class=\"meta\"></div>\n  <ul class=\"ui big horizontal list voters\">\n    <input type=\"checkbox\" #chkbox [checked]=\"article.completed\" (click)=\"setCompleted(article, chkbox.checked)\">\n    <li class=\"item\">\n      {{article.completed ? 'Is Done' : 'Working on it' }}\n    </li>\n    <li class=\"item\">\n      <a (click)=\"myElement.remove()\"> x </a>\n    </li>\n  </ul>\n</div>\n" }), 
+                        template: "\n<div class=\"twelve wide column\" *ngIf=\"item.completed===false\" #myElement>\n  <a class=\"ui large header\">\n        {{ item.title }}\n      </a>\n  <!-- right here -->\n  <div class=\"meta\"></div>\n  <ul class=\"ui big horizontal list voters\">\n    <input type=\"checkbox\" #chkbox [checked]=\"item.completed\" (click)=\"setCompleted(item, chkbox.checked)\">\n    <li class=\"item\">\n      {{item.completed ? 'Is Done' : 'Working on it' }}\n    </li>\n    <li class=\"item\">\n      <a (click)=\"myElement.remove()\"> x </a>\n    </li>\n  </ul>\n</div>\n" }), 
                     __metadata('design:paramtypes', [])
-                ], ArticleComponent);
-                return ArticleComponent;
+                ], TodoArticleComponent);
+                return TodoArticleComponent;
             }());
-            exports_1("ArticleComponent", ArticleComponent);
+            exports_1("TodoArticleComponent", TodoArticleComponent);
         }
     }
 });
-//# sourceMappingURL=reddit-article.component.js.map
+//# sourceMappingURL=todo-article.component.js.map
