@@ -8,11 +8,12 @@ import {Article} from '../article' ;
         class: 'row'
     },
     template: `
-    <div class="twelve wide column">
-      <a class="ui large header" href="{{ article.link }}">
+  
+    <div class="twelve wide column" *ngIf="article.completed===true">
+      <a class="ui large header">
         {{ article.title }}
       </a>
-</div> `
+    </div> `
 })
 
 export class CompletedListComponent{

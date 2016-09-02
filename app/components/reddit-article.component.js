@@ -39,7 +39,7 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                         host: {
                             class: 'row'
                         },
-                        template: "\n    <div class=\"twelve wide column\">\n      <a class=\"ui large header\" href=\"{{ article.link }}\">\n        {{ article.title }}\n      </a>\n      <!-- right here -->\n<div class=\"meta\"></div>\n      <ul class=\"ui big horizontal list voters\">\n      <input type=\"checkbox\" #chkbox [checked]=\"article.completed\" (click)=\"setCompleted(article, chkbox.checked)\">\n<li class=\"item\">\n       {{article.completed ? 'Is Done' : 'Working on it' }}\n</li> \n</ul>\n</div> "
+                        template: "\n  \n    <div class=\"twelve wide column\" *ngIf=\"article.completed===false\">\n   \n      <a class=\"ui large header\" href=\"{{ article.link }}\">\n        {{ article.title }}\n      </a>\n      <!-- right here -->\n<div class=\"meta\"></div>\n      <ul class=\"ui big horizontal list voters\">\n      <input type=\"checkbox\" #chkbox [checked]=\"article.completed\" (click)=\"setCompleted(article, chkbox.checked)\">\n<li class=\"item\">\n       {{article.completed ? 'Is Done' : 'Working on it' }}\n</li> \n</ul>\n</div> \n"
                     }), 
                     __metadata('design:paramtypes', [])
                 ], ArticleComponent);

@@ -21,23 +21,22 @@ import { OnInit } from '@angular/core';
       </button>
     </form>
     <div class="ui grid posts">
-  <reddit-article *ngFor = "let foobar of sortedArticles()" [article] = "foobar">
-  </reddit-article>
- 
-</div>
+      <h2> We just started</h2>
+      <reddit-article *ngFor = "let foobar of sortedArticles()" [article] = "foobar">
+      </reddit-article>
+    </div>
+    <div class="ui grid posts">
+      <h2> We are good</h2>
+      <completed-list *ngFor = "let foobar of sortedArticles()" [article] = "foobar">
+      </completed-list>
+    </div>
 `,
 providers: [ArticleService]
 })
 export class RedditApp implements OnInit{
 
     articles: Article[];
-    // constructor() {
-    //     this.articles = [
-    //         new Article('Angular 2', 'http://angular.io', 3),
-    //         new Article('Fullstack', 'http://fullstack.io', 2),
-    //         new Article('Angular Homepage', 'http://angular.io', 1),
-    //     ];
-    // }
+
     addArticle(title: HTMLInputElement): void {
         console.log(`Adding article title: ${title.value}`);
         this.articles.push(new Article(title.value, false ,0));

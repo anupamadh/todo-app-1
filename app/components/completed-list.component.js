@@ -28,7 +28,7 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                         host: {
                             class: 'row'
                         },
-                        template: "\n    <div class=\"twelve wide column\">\n      <a class=\"ui large header\" href=\"{{ article.link }}\">\n        {{ article.title }}\n      </a>\n</div> "
+                        template: "\n  \n    <div class=\"twelve wide column\" *ngIf=\"article.completed===true\">\n      <a class=\"ui large header\">\n        {{ article.title }}\n      </a>\n    </div> "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], CompletedListComponent);

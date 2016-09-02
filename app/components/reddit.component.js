@@ -28,13 +28,6 @@ System.register(['../article', '@angular/core', '../services/article.service'], 
                 function RedditApp(_articleService) {
                     this._articleService = _articleService;
                 }
-                // constructor() {
-                //     this.articles = [
-                //         new Article('Angular 2', 'http://angular.io', 3),
-                //         new Article('Fullstack', 'http://fullstack.io', 2),
-                //         new Article('Angular Homepage', 'http://angular.io', 1),
-                //     ];
-                // }
                 RedditApp.prototype.addArticle = function (title) {
                     console.log("Adding article title: " + title.value);
                     this.articles.push(new article_1.Article(title.value, false, 0));
@@ -50,7 +43,7 @@ System.register(['../article', '@angular/core', '../services/article.service'], 
                 RedditApp = __decorate([
                     core_1.Component({
                         selector: 'reddit',
-                        template: "\n    <form class=\"ui large form segment\">\n      <h3 class=\"ui header\">Add a Link</h3>\n      <div class=\"field\">\n        <label for=\"title\">Title:</label>\n        <input name=\"title\" #newtitle>  <!-- changed -->\n      </div>\n  \n      <!-- added this button -->\n      <button type =\"button\" (click)=\"addArticle(newtitle)\"\n              class=\"ui positive right floated button\">\n        Submit link\n      </button>\n    </form>\n    <div class=\"ui grid posts\">\n  <reddit-article *ngFor = \"let foobar of sortedArticles()\" [article] = \"foobar\">\n  </reddit-article>\n \n</div>\n",
+                        template: "\n    <form class=\"ui large form segment\">\n      <h3 class=\"ui header\">Add a Link</h3>\n      <div class=\"field\">\n        <label for=\"title\">Title:</label>\n        <input name=\"title\" #newtitle>  <!-- changed -->\n      </div>\n  \n      <!-- added this button -->\n      <button type =\"button\" (click)=\"addArticle(newtitle)\"\n              class=\"ui positive right floated button\">\n        Submit link\n      </button>\n    </form>\n    <div class=\"ui grid posts\">\n      <h2> We just started</h2>\n      <reddit-article *ngFor = \"let foobar of sortedArticles()\" [article] = \"foobar\">\n      </reddit-article>\n    </div>\n    <div class=\"ui grid posts\">\n      <h2> We are good</h2>\n      <completed-list *ngFor = \"let foobar of sortedArticles()\" [article] = \"foobar\">\n      </completed-list>\n    </div>\n",
                         providers: [article_service_1.ArticleService]
                     }), 
                     __metadata('design:paramtypes', [article_service_1.ArticleService])

@@ -6,17 +6,11 @@ System.register([], function(exports_1, context_1) {
         setters:[],
         execute: function() {
             Article = (function () {
-                function Article(title, checked, votes) {
+                function Article(title, completed) {
+                    if (completed === void 0) { completed = false; }
                     this.title = title;
-                    this.checked = checked;
-                    this.votes = votes || 0;
+                    this.completed = completed;
                 }
-                Article.prototype.voteUp = function () {
-                    this.votes += 1;
-                };
-                Article.prototype.voteDown = function () {
-                    this.votes -= 1;
-                };
                 return Article;
             }());
             exports_1("Article", Article);

@@ -10,7 +10,9 @@ import {Article} from '../article' ;
         class: 'row'
     },
     template: `
-    <div class="twelve wide column">
+  
+    <div class="twelve wide column" *ngIf="article.completed===false">
+   
       <a class="ui large header" href="{{ article.link }}">
         {{ article.title }}
       </a>
@@ -22,7 +24,8 @@ import {Article} from '../article' ;
        {{article.completed ? 'Is Done' : 'Working on it' }}
 </li> 
 </ul>
-</div> `
+</div> 
+`
 })
 
 
