@@ -24,7 +24,7 @@ import { OnInit } from '@angular/core';
       </button>
     </form>
     <div class="ui grid posts">
-  <reddit-article *ngFor = "let foobar of articles" [article] = "foobar">
+  <reddit-article *ngFor = "let foobar of sortedArticles()" [article] = "foobar">
   </reddit-article>
 </div>
 `,
@@ -32,7 +32,7 @@ providers: [ArticleService]
 })
 export class RedditApp implements OnInit{
 
-    public articles: Article[];
+    articles: Article[];
     // constructor() {
     //     this.articles = [
     //         new Article('Angular 2', 'http://angular.io', 3),
@@ -51,13 +51,12 @@ export class RedditApp implements OnInit{
       
     }
     sortedArticles(): Article[] {
+      console.log("this.articles: ", this.articles);
 return this.articles.sort((a: Article, b: Article) => b.votes - a.votes);
 }
-getArticles(){
-  this._articleService.getArticles().then((articles: Article[]) => this.articles = articles);
-}
 
-ngOnInit(): any{
-  this.getArticles();
+
+ngOnInit() {
+  this.articles = this._articleService.getArticles();
 }
 }

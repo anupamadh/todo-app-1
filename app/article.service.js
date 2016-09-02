@@ -1,4 +1,4 @@
-System.register(['@angular/core', './mock-article'], function(exports_1, context_1) {
+System.register(['@angular/core', './article', './backend.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,26 +10,38 @@ System.register(['@angular/core', './mock-article'], function(exports_1, context
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, mock_article_1;
+    var core_1, article_1, backend_service_1;
     var ArticleService;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (mock_article_1_1) {
-                mock_article_1 = mock_article_1_1;
+            function (article_1_1) {
+                article_1 = article_1_1;
+            },
+            function (backend_service_1_1) {
+                backend_service_1 = backend_service_1_1;
             }],
         execute: function() {
+            // import { Logger } from './logger.service';
             ArticleService = (function () {
-                function ArticleService() {
+                function ArticleService(backend) {
+                    this.backend = backend;
+                    this.articlearr = [];
                 }
                 ArticleService.prototype.getArticles = function () {
-                    return Promise.resolve(mock_article_1.ARTICLES);
+                    var _this = this;
+                    this.backend.getAll(article_1.Article).then(function (articles) {
+                        // this.logger.log(`Fetched ${articles.length} articles.`);
+                        (_a = _this.articlearr).push.apply(_a, articles); // fill cache
+                        var _a;
+                    });
+                    return this.articlearr;
                 };
                 ArticleService = __decorate([
                     core_1.Injectable(), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [backend_service_1.BackendService])
                 ], ArticleService);
                 return ArticleService;
             }());

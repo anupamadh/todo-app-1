@@ -42,19 +42,16 @@ System.register(['./article', '@angular/core', './article.service'], function(ex
                     link.value = '';
                 };
                 RedditApp.prototype.sortedArticles = function () {
+                    console.log("this.articles: ", this.articles);
                     return this.articles.sort(function (a, b) { return b.votes - a.votes; });
                 };
-                RedditApp.prototype.getArticles = function () {
-                    var _this = this;
-                    this._articleService.getArticles().then(function (articles) { return _this.articles = articles; });
-                };
                 RedditApp.prototype.ngOnInit = function () {
-                    this.getArticles();
+                    this.articles = this._articleService.getArticles();
                 };
                 RedditApp = __decorate([
                     core_1.Component({
                         selector: 'reddit',
-                        template: "\n    <form class=\"ui large form segment\">\n      <h3 class=\"ui header\">Add a Link</h3>\n      <div class=\"field\">\n        <label for=\"title\">Title:</label>\n        <input name=\"title\" #newtitle>  <!-- changed -->\n      </div>\n      <div class=\"field\">\n        <label for=\"link\">Link:</label>\n        <input name=\"link\" #newlink> <!-- changed -->\n      </div>\n      <!-- added this button -->\n      <button type =\"button\" (click)=\"addArticle(newtitle, newlink)\"\n              class=\"ui positive right floated button\">\n        Submit link\n      </button>\n    </form>\n    <div class=\"ui grid posts\">\n  <reddit-article *ngFor = \"let foobar of articles\" [article] = \"foobar\">\n  </reddit-article>\n</div>\n",
+                        template: "\n    <form class=\"ui large form segment\">\n      <h3 class=\"ui header\">Add a Link</h3>\n      <div class=\"field\">\n        <label for=\"title\">Title:</label>\n        <input name=\"title\" #newtitle>  <!-- changed -->\n      </div>\n      <div class=\"field\">\n        <label for=\"link\">Link:</label>\n        <input name=\"link\" #newlink> <!-- changed -->\n      </div>\n      <!-- added this button -->\n      <button type =\"button\" (click)=\"addArticle(newtitle, newlink)\"\n              class=\"ui positive right floated button\">\n        Submit link\n      </button>\n    </form>\n    <div class=\"ui grid posts\">\n  <reddit-article *ngFor = \"let foobar of sortedArticles()\" [article] = \"foobar\">\n  </reddit-article>\n</div>\n",
                         providers: [article_service_1.ArticleService]
                     }), 
                     __metadata('design:paramtypes', [article_service_1.ArticleService])
