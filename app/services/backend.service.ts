@@ -1,11 +1,11 @@
 import { Injectable, Type } from '@angular/core';
-import { Logger } from './logger.service';
-import { Article } from './article';
+// import { Logger } from './logger.service';
+import { Article } from '../article';
 
 const ARTICLES = [
-     new Article('Angular 2', 'http://angular.io', 3),
-    new Article('Fullstack', 'http://fullstack.io', 2),
-    new Article('Angular Homepage', 'http://angular.io', 1)
+     new Article('Angular 2', false, 3),
+    new Article('Fullstack', false, 2),
+    new Article('Angular Homepage', false, 1)
       ];
 
 @Injectable()

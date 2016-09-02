@@ -11,27 +11,31 @@ System.register(['@angular/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var Logger;
+    var CompletedListComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            Logger = (function () {
-                function Logger() {
+            CompletedListComponent = (function () {
+                function CompletedListComponent() {
                 }
-                Logger.prototype.log = function (msg) { console.log(msg); };
-                Logger.prototype.error = function (msg) { console.error(msg); };
-                Logger.prototype.warn = function (msg) { console.warn(msg); };
-                Logger = __decorate([
-                    core_1.Injectable(), 
+                CompletedListComponent = __decorate([
+                    core_1.Component({
+                        selector: 'completed-list',
+                        inputs: ['article'],
+                        host: {
+                            class: 'row'
+                        },
+                        template: "\n    <div class=\"twelve wide column\">\n      <a class=\"ui large header\" href=\"{{ article.link }}\">\n        {{ article.title }}\n      </a>\n</div> "
+                    }), 
                     __metadata('design:paramtypes', [])
-                ], Logger);
-                return Logger;
+                ], CompletedListComponent);
+                return CompletedListComponent;
             }());
-            exports_1("Logger", Logger);
+            exports_1("CompletedListComponent", CompletedListComponent);
         }
     }
 });
-//# sourceMappingURL=logger.service.js.map
+//# sourceMappingURL=completed-list.component.js.map

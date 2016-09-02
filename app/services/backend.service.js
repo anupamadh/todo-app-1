@@ -1,4 +1,4 @@
-System.register(['@angular/core', './article'], function(exports_1, context_1) {
+System.register(['@angular/core', '../article'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -22,9 +22,9 @@ System.register(['@angular/core', './article'], function(exports_1, context_1) {
             }],
         execute: function() {
             ARTICLES = [
-                new article_1.Article('Angular 2', 'http://angular.io', 3),
-                new article_1.Article('Fullstack', 'http://fullstack.io', 2),
-                new article_1.Article('Angular Homepage', 'http://angular.io', 1)
+                new article_1.Article('Angular 2', false, 3),
+                new article_1.Article('Fullstack', false, 2),
+                new article_1.Article('Angular Homepage', false, 1)
             ];
             BackendService = (function () {
                 function BackendService() {

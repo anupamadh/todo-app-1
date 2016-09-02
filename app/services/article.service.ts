@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Article } from './article';
+import { Article } from '../article';
 import { BackendService } from './backend.service';
 // import { Logger } from './logger.service';
 
@@ -9,7 +9,7 @@ export class ArticleService {
   private articlearr: Article[] = [];
 
   constructor(
-    private backend: BackendService,
+    private backend: BackendService
     ) { }
 
   getArticles() {

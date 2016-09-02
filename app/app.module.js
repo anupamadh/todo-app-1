@@ -1,4 +1,4 @@
-System.register(["@angular/core", "@angular/platform-browser", './reddit.component', './reddit-article.component', './article.service', './backend.service', './logger.service'], function(exports_1, context_1) {
+System.register(["@angular/core", "@angular/platform-browser", './components/reddit.component', './components/reddit-article.component', './services/article.service', './services/backend.service', './components/completed-list.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(["@angular/core", "@angular/platform-browser", './reddit.compone
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, platform_browser_1, reddit_component_1, reddit_article_component_1, article_service_1, backend_service_1, logger_service_1;
+    var core_1, platform_browser_1, reddit_component_1, reddit_article_component_1, article_service_1, backend_service_1, completed_list_component_1;
     var RedditAppModule;
     return {
         setters:[
@@ -32,10 +32,11 @@ System.register(["@angular/core", "@angular/platform-browser", './reddit.compone
             function (backend_service_1_1) {
                 backend_service_1 = backend_service_1_1;
             },
-            function (logger_service_1_1) {
-                logger_service_1 = logger_service_1_1;
+            function (completed_list_component_1_1) {
+                completed_list_component_1 = completed_list_component_1_1;
             }],
         execute: function() {
+            // import { Logger }              from './logger.service';
             RedditAppModule = (function () {
                 function RedditAppModule() {
                 }
@@ -43,12 +44,12 @@ System.register(["@angular/core", "@angular/platform-browser", './reddit.compone
                     core_1.NgModule({
                         declarations: [
                             reddit_component_1.RedditApp,
-                            reddit_article_component_1.ArticleComponent
+                            reddit_article_component_1.ArticleComponent,
+                            completed_list_component_1.CompletedListComponent
                         ],
                         providers: [
                             backend_service_1.BackendService,
-                            article_service_1.ArticleService,
-                            logger_service_1.Logger
+                            article_service_1.ArticleService
                         ],
                         imports: [platform_browser_1.BrowserModule],
                         bootstrap: [reddit_component_1.RedditApp]

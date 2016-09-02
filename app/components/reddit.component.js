@@ -1,4 +1,4 @@
-System.register(['./article', '@angular/core', './article.service'], function(exports_1, context_1) {
+System.register(['../article', '@angular/core', '../services/article.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -35,11 +35,10 @@ System.register(['./article', '@angular/core', './article.service'], function(ex
                 //         new Article('Angular Homepage', 'http://angular.io', 1),
                 //     ];
                 // }
-                RedditApp.prototype.addArticle = function (title, link) {
-                    console.log("Adding article title: " + title.value + " and link: " + link.value);
-                    this.articles.push(new article_1.Article(title.value, link.value, 0));
+                RedditApp.prototype.addArticle = function (title) {
+                    console.log("Adding article title: " + title.value);
+                    this.articles.push(new article_1.Article(title.value, false, 0));
                     title.value = '';
-                    link.value = '';
                 };
                 RedditApp.prototype.sortedArticles = function () {
                     console.log("this.articles: ", this.articles);
@@ -51,7 +50,7 @@ System.register(['./article', '@angular/core', './article.service'], function(ex
                 RedditApp = __decorate([
                     core_1.Component({
                         selector: 'reddit',
-                        template: "\n    <form class=\"ui large form segment\">\n      <h3 class=\"ui header\">Add a Link</h3>\n      <div class=\"field\">\n        <label for=\"title\">Title:</label>\n        <input name=\"title\" #newtitle>  <!-- changed -->\n      </div>\n      <div class=\"field\">\n        <label for=\"link\">Link:</label>\n        <input name=\"link\" #newlink> <!-- changed -->\n      </div>\n      <!-- added this button -->\n      <button type =\"button\" (click)=\"addArticle(newtitle, newlink)\"\n              class=\"ui positive right floated button\">\n        Submit link\n      </button>\n    </form>\n    <div class=\"ui grid posts\">\n  <reddit-article *ngFor = \"let foobar of sortedArticles()\" [article] = \"foobar\">\n  </reddit-article>\n</div>\n",
+                        template: "\n    <form class=\"ui large form segment\">\n      <h3 class=\"ui header\">Add a Link</h3>\n      <div class=\"field\">\n        <label for=\"title\">Title:</label>\n        <input name=\"title\" #newtitle>  <!-- changed -->\n      </div>\n  \n      <!-- added this button -->\n      <button type =\"button\" (click)=\"addArticle(newtitle)\"\n              class=\"ui positive right floated button\">\n        Submit link\n      </button>\n    </form>\n    <div class=\"ui grid posts\">\n  <reddit-article *ngFor = \"let foobar of sortedArticles()\" [article] = \"foobar\">\n  </reddit-article>\n \n</div>\n",
                         providers: [article_service_1.ArticleService]
                     }), 
                     __metadata('design:paramtypes', [article_service_1.ArticleService])

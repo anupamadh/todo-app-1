@@ -1,10 +1,10 @@
 export class Article {
     title: string;
-    link: string;
+    checked: boolean;
     votes: number;
-    constructor(title: string, link: string, votes?: number) {
+    constructor(title: string, checked: boolean, votes?: number) {
         this.title = title;
-        this.link = link;
+        this.checked = checked;
         this.votes = votes || 0;
     }
 
@@ -14,16 +14,6 @@ export class Article {
 
     voteDown(): void {
         this.votes -= 1;
-    }
-
-    domain(): string {
-        try {
-            const link: string = this.link.split('//')[1];
-            return link.split('/')[0];
-        }
-        catch (err) {
-            return null;
-        }
     }
 
 

@@ -29,6 +29,9 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                     this.article.voteDown();
                     return false;
                 };
+                ArticleComponent.prototype.setCompleted = function (article, checked) {
+                    article.completed = checked;
+                };
                 ArticleComponent = __decorate([
                     core_1.Component({
                         selector: 'reddit-article',
@@ -36,7 +39,7 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                         host: {
                             class: 'row'
                         },
-                        template: "\n    <div class=\"four wide column center aligned votes\">\n      <div class=\"ui statistic\">\n        <div class=\"value\">\n          {{ article.votes }}\n        </div>\n        <div class=\"label\">\n          Points\n        </div>\n      </div>\n    </div>\n    <div class=\"twelve wide column\">\n      <a class=\"ui large header\" href=\"{{ article.link }}\">\n        {{ article.title }}\n      </a>\n      <!-- right here -->\n<div class=\"meta\">({{ article.domain() }})</div>\n      <ul class=\"ui big horizontal list voters\">\n        <li class=\"item\">\n          <a href (click)=\"voteUp()\">\n          <i class=\"arrow up icon\"></i>\n              upvote\n</a> </li>\n        <li class=\"item\">\n          <a href (click)=\"voteDown()\">\n            <i class=\"arrow down icon\"></i>\n            downvote\n          </a>\n</li> </ul>\n</div> "
+                        template: "\n    <div class=\"twelve wide column\">\n      <a class=\"ui large header\" href=\"{{ article.link }}\">\n        {{ article.title }}\n      </a>\n      <!-- right here -->\n<div class=\"meta\"></div>\n      <ul class=\"ui big horizontal list voters\">\n      <input type=\"checkbox\" #chkbox [checked]=\"article.completed\" (click)=\"setCompleted(article, chkbox.checked)\">\n<li class=\"item\">\n       {{article.completed ? 'Is Done' : 'Working on it' }}\n</li> \n</ul>\n</div> "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], ArticleComponent);
