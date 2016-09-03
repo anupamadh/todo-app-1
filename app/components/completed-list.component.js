@@ -28,7 +28,7 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                         host: {
                             class: 'row'
                         },
-                        template: "\n  <div class=\"media-content\" *ngIf=\"item.completed===true\">\n        <div class=\"content\">\n      <p>\n        <strong>  {{ item.title }}</strong> \n      </p>\n    </div>\n    </div>"
+                        templateUrl: 'app/components/views/completed-list.html'
                     }), 
                     __metadata('design:paramtypes', [])
                 ], CompletedListComponent);

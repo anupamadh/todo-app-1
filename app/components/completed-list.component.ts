@@ -7,14 +7,7 @@ import {Item} from '../item' ;
     host: {
         class: 'row'
     },
-    template: `
-  <div class="media-content" *ngIf="item.completed===true">
-        <div class="content">
-      <p>
-        <strong>  {{ item.title }}</strong> 
-      </p>
-    </div>
-    </div>`
+    templateUrl:'app/components/views/completed-list.html' 
 })
 
 export class CompletedListComponent{

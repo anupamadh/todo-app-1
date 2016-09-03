@@ -39,7 +39,7 @@ System.register(['../item', '@angular/core', '../services/article.service'], fun
                 TodoApp = __decorate([
                     core_1.Component({
                         selector: 'todo',
-                        template: "\n<label class=\"label\">Add Task</label>\n<p class=\"control\">\n  <input class=\"input\" type=\"text\" placeholder=\"Text input\" #newitem>\n</p>\n<p class=\"control\">\n  <button class=\"button is-primary\" (click)=\"addItem(newitem)\">Submit</button>\n  <button class=\"button is-link\">Cancel</button>\n</p>\n<div class=\"tile is-ancestor\">\n  <div class=\"tile is-vertical is-parent\">\n    \n    <div class=\"tile is-child box\">\n       <h2 class=\"title is-3\"> Pending Tasks</h2>\n      <todo-article *ngFor = \"let foobar of items\" [item] = \"foobar\">\n      </todo-article>\n    </div>\n    <div class=\"tile is-child box\">\n     <h2 class=\"title is-3\"> Completed Tasks</h2>\n      <completed-list *ngFor = \"let foobar of items\" [item] = \"foobar\">\n      </completed-list>\n    </div>\n  </div>\n</div>\n",
+                        templateUrl: 'app/components/views/todo.html',
                         providers: [article_service_1.ArticleService]
                     }), 
                     __metadata('design:paramtypes', [article_service_1.ArticleService])
