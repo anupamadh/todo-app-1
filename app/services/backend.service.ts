@@ -3,9 +3,9 @@ import { Injectable, Type } from '@angular/core';
 import { Item } from '../item';
 
 const ITEMS = [
-     new Item('Finish assignment on nodejs', false),
-    new Item('Start final project', false),
-    new Item('Add styling to previous project', false)
+    //  new Item('Finish assignment on nodejs', false),
+    // new Item('Start final project', false),
+    // new Item('Add styling to previous project', false)
       ];
 
 @Injectable()

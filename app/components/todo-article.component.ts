@@ -7,7 +7,9 @@ import { Item } from '../item';
     host: { class: 'row' },
      templateUrl: 'app/components/views/todo-article.html'
  }) 
-export class TodoArticleComponent { item: Item; setCompleted(item: Item, checked: boolean) 
+export class TodoArticleComponent { 
+  item: Item; 
+  setCompleted(item: Item, checked: boolean) 
   { 
     item.completed = checked;
    } 

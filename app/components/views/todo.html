@@ -1,3 +1,4 @@
+<div>
 <label class="label">Add Task</label>
 <p class="control">
   <input class="input" type="text" placeholder="Text input" #newitem>
@@ -6,16 +7,18 @@
   <button class="button is-primary" (click)="addItem(newitem)">Submit</button>
   <button class="button is-link">Cancel</button>
 </p>
+<br>
+</div>
 <div class="tile is-ancestor">
   <div class="tile is-vertical is-parent">
     
     <div class="tile is-child box">
-       <h2 class="title is-3"> Pending Tasks</h2>
+       <h2 class="title is-3 red"> <strong> Pending Tasks </strong></h2>
       <todo-article *ngFor = "let foobar of items" [item] = "foobar">
       </todo-article>
     </div>
     <div class="tile is-child box">
-     <h2 class="title is-3"> Completed Tasks</h2>
+     <h2 class="title is-3 green"> <strong> Completed Tasks </strong></h2>
       <completed-list *ngFor = "let foobar of items" [item] = "foobar">
       </completed-list>
     </div>

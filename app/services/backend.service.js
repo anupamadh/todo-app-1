@@ -21,11 +21,7 @@ System.register(['@angular/core', '../item'], function(exports_1, context_1) {
                 item_1 = item_1_1;
             }],
         execute: function() {
-            ITEMS = [
-                new item_1.Item('Finish assignment on nodejs', false),
-                new item_1.Item('Start final project', false),
-                new item_1.Item('Add styling to previous project', false)
-            ];
+            ITEMS = [];
             BackendService = (function () {
                 function BackendService() {
                 }
