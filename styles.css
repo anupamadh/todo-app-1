@@ -40,10 +40,7 @@ ul.ui.list li:before {
   content: '';
 }
 
-.voters {
-  clear: both;
-  width: 100%;
-}
+
 
 #main-section{
   background-image: url(images/todo.jpeg);
