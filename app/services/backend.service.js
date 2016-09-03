@@ -22,9 +22,9 @@ System.register(['@angular/core', '../item'], function(exports_1, context_1) {
             }],
         execute: function() {
             ITEMS = [
-                new item_1.Item('Angular 2', false),
-                new item_1.Item('Fullstack', false),
-                new item_1.Item('Angular Homepage', false)
+                new item_1.Item('Finish assignment on nodejs', false),
+                new item_1.Item('Start final project', false),
+                new item_1.Item('Add styling to previous project', false)
             ];
             BackendService = (function () {
                 function BackendService() {

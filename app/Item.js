@@ -17,4 +17,4 @@ System.register([], function(exports_1, context_1) {
         }
     }
 });
-//# sourceMappingURL=Item.js.map
+//# sourceMappingURL=item.js.map

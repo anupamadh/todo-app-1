@@ -7,29 +7,29 @@ import { OnInit } from '@angular/core';
 @Component({
     selector: 'todo',
     template: `
-    <form class="ui large form segment">
-      <h3 class="ui header">Add a Link</h3>
-      <div class="field">
-        <label for="title">Title:</label>
-        <input name="title" #newtitle>  <!-- changed -->
-      </div>
-  
-      <!-- added this button -->
-      <button type ="button" (click)="addArticle(newtitle)"
-              class="ui positive right floated button">
-        Submit link
-      </button>
-    </form>
-    <div class="ui grid posts">
-      <h2> We just started</h2>
+<label class="label">Add Task</label>
+<p class="control">
+  <input class="input" type="text" placeholder="Text input" #newitem>
+</p>
+<p class="control">
+  <button class="button is-primary" (click)="addItem(newitem)">Submit</button>
+  <button class="button is-link">Cancel</button>
+</p>
+<div class="tile is-ancestor">
+  <div class="tile is-vertical is-parent">
+    
+    <div class="tile is-child box">
+       <h2 class="title is-3"> Pending Tasks</h2>
       <todo-article *ngFor = "let foobar of items" [item] = "foobar">
       </todo-article>
     </div>
-    <div class="ui grid posts">
-      <h2> We are good</h2>
+    <div class="tile is-child box">
+     <h2 class="title is-3"> Completed Tasks</h2>
       <completed-list *ngFor = "let foobar of items" [item] = "foobar">
       </completed-list>
     </div>
+  </div>
+</div>
 `,
 providers: [ArticleService]
 })
@@ -37,7 +37,7 @@ export class TodoApp implements OnInit{
 
     items: Item[];
 
-    addArticle(title: HTMLInputElement): void {
+    addItem(title: HTMLInputElement): void {
         console.log(`Adding article title: ${title.value}`);
         this.items.push(new Item(title.value, false));
         title.value = '';

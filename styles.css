@@ -44,3 +44,8 @@ ul.ui.list li:before {
   clear: both;
   width: 100%;
 }
+
+#main-section{
+  background-image: url(images/todo.jpeg);
+  background-repeat: no-repeat;
+}

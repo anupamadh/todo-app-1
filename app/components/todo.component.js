@@ -28,7 +28,7 @@ System.register(['../item', '@angular/core', '../services/article.service'], fun
                 function TodoApp(_articleService) {
                     this._articleService = _articleService;
                 }
-                TodoApp.prototype.addArticle = function (title) {
+                TodoApp.prototype.addItem = function (title) {
                     console.log("Adding article title: " + title.value);
                     this.items.push(new item_1.Item(title.value, false));
                     title.value = '';
@@ -39,7 +39,7 @@ System.register(['../item', '@angular/core', '../services/article.service'], fun
                 TodoApp = __decorate([
                     core_1.Component({
                         selector: 'todo',
-                        template: "\n    <form class=\"ui large form segment\">\n      <h3 class=\"ui header\">Add a Link</h3>\n      <div class=\"field\">\n        <label for=\"title\">Title:</label>\n        <input name=\"title\" #newtitle>  <!-- changed -->\n      </div>\n  \n      <!-- added this button -->\n      <button type =\"button\" (click)=\"addArticle(newtitle)\"\n              class=\"ui positive right floated button\">\n        Submit link\n      </button>\n    </form>\n    <div class=\"ui grid posts\">\n      <h2> We just started</h2>\n      <todo-article *ngFor = \"let foobar of items\" [item] = \"foobar\">\n      </todo-article>\n    </div>\n    <div class=\"ui grid posts\">\n      <h2> We are good</h2>\n      <completed-list *ngFor = \"let foobar of items\" [item] = \"foobar\">\n      </completed-list>\n    </div>\n",
+                        template: "\n<label class=\"label\">Add Task</label>\n<p class=\"control\">\n  <input class=\"input\" type=\"text\" placeholder=\"Text input\" #newitem>\n</p>\n<p class=\"control\">\n  <button class=\"button is-primary\" (click)=\"addItem(newitem)\">Submit</button>\n  <button class=\"button is-link\">Cancel</button>\n</p>\n<div class=\"tile is-ancestor\">\n  <div class=\"tile is-vertical is-parent\">\n    \n    <div class=\"tile is-child box\">\n       <h2 class=\"title is-3\"> Pending Tasks</h2>\n      <todo-article *ngFor = \"let foobar of items\" [item] = \"foobar\">\n      </todo-article>\n    </div>\n    <div class=\"tile is-child box\">\n     <h2 class=\"title is-3\"> Completed Tasks</h2>\n      <completed-list *ngFor = \"let foobar of items\" [item] = \"foobar\">\n      </completed-list>\n    </div>\n  </div>\n</div>\n",
                         providers: [article_service_1.ArticleService]
                     }), 
                     __metadata('design:paramtypes', [article_service_1.ArticleService])

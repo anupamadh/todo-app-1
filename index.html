@@ -11,6 +11,8 @@
     <script src="node_modules/systemjs/dist/system.src.js"></script>
 
     <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/bulma.css"" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="resources/vendor/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
@@ -24,20 +26,29 @@
     </script>
 
     <!-- Menu Bar -->
-    <div class="ui menu">
-      <div class="ui container">
-        
-        <div class="header item borderless">
-          <h1 class="ui header">
-            Todo App
-          </h1>
-        </div>
-      </div>
-    </div>
 
-    <div class="ui main text container">
-      <todo></todo> <!-- <--- Our app loads here! -->
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container  has-text-centered">
+      <h1 class="title is-1">
+        Todo App
+      </h1>
+      <h2 class="subtitle">
+        An App to keep you organized
+      </h2>
     </div>
-
+  </div>
+</section>
+    
+    <section class="section" id="main-section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-half is-offset-one-quarter">
+        <todo></todo>
+</div>
+</div>
+</div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   </body>
 </html>

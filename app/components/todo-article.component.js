@@ -29,7 +29,7 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                         selector: 'todo-article',
                         inputs: ['item'],
                         host: { class: 'row' },
-                        template: "\n<div class=\"twelve wide column\" *ngIf=\"item.completed===false\" #myElement>\n  <a class=\"ui large header\">\n        {{ item.title }}\n      </a>\n  <!-- right here -->\n  <div class=\"meta\"></div>\n  <ul class=\"ui big horizontal list voters\">\n    <input type=\"checkbox\" #chkbox [checked]=\"item.completed\" (click)=\"setCompleted(item, chkbox.checked)\">\n    <li class=\"item\">\n      {{item.completed ? 'Is Done' : 'Working on it' }}\n    </li>\n    <li class=\"item\">\n      <a (click)=\"myElement.remove()\"> x </a>\n    </li>\n  </ul>\n</div>\n" }), 
+                        template: "\n     <div *ngIf=\"item.completed===false\" #myElement>\n        <div class=\"content\">\n        <p>\n         <strong>  {{ item.title }}</strong> \n        </p>\n      </div>\n    <nav class=\"level\">\n      <div class=\"level-left\">\n        <a class=\"level-item\">\n          <input type=\"checkbox\" #chkbox [checked]=\"item.completed\" (click)=\"setCompleted(item, chkbox.checked)\">\n        </a>\n        <div class=\"level-item\">\n          <span> {{item.completed ? 'Is Done' : 'Working on it' }}</span>\n        </div>\n        <div class=\"level-item\">\n          <a (click)=\"myElement.remove()\"> x </a>\n        </div>\n      </div>\n    </nav>\n    </div>\n     <br>\n" }), 
                     __metadata('design:paramtypes', [])
                 ], TodoArticleComponent);
                 return TodoArticleComponent;

@@ -8,12 +8,13 @@ import {Item} from '../item' ;
         class: 'row'
     },
     template: `
-  
-    <div class="twelve wide column" *ngIf="item.completed===true">
-      <a class="ui large header">
-        {{ item.title }}
-      </a>
-    </div> `
+  <div class="media-content" *ngIf="item.completed===true">
+        <div class="content">
+      <p>
+        <strong>  {{ item.title }}</strong> 
+      </p>
+    </div>
+    </div>`
 })
 
 export class CompletedListComponent{

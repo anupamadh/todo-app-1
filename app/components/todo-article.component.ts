@@ -6,22 +6,27 @@ import { Item } from '../item';
     inputs: ['item'],
     host: { class: 'row' },
      template: `
-<div class="twelve wide column" *ngIf="item.completed===false" #myElement>
-  <a class="ui large header">
-        {{ item.title }}
-      </a>
-  <!-- right here -->
-  <div class="meta"></div>
-  <ul class="ui big horizontal list voters">
-    <input type="checkbox" #chkbox [checked]="item.completed" (click)="setCompleted(item, chkbox.checked)">
-    <li class="item">
-      {{item.completed ? 'Is Done' : 'Working on it' }}
-    </li>
-    <li class="item">
-      <a (click)="myElement.remove()"> x </a>
-    </li>
-  </ul>
-</div>
+     <div *ngIf="item.completed===false" #myElement>
+        <div class="content">
+        <p>
+         <strong>  {{ item.title }}</strong> 
+        </p>
+      </div>
+    <nav class="level">
+      <div class="level-left">
+        <a class="level-item">
+          <input type="checkbox" #chkbox [checked]="item.completed" (click)="setCompleted(item, chkbox.checked)">
+        </a>
+        <div class="level-item">
+          <span> {{item.completed ? 'Is Done' : 'Working on it' }}</span>
+        </div>
+        <div class="level-item">
+          <a (click)="myElement.remove()"> x </a>
+        </div>
+      </div>
+    </nav>
+    </div>
+     <br>
 ` }) 
 export class TodoArticleComponent { item: Item; setCompleted(item: Item, checked: boolean) 
   { 
