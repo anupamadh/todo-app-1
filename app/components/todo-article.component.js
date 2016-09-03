@@ -22,7 +22,10 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                 function TodoArticleComponent() {
                 }
                 TodoArticleComponent.prototype.setCompleted = function (item, checked) {
-                    item.completed = checked;
+                    setTimeout(function () {
+                        item.completed = checked;
+                        ;
+                    }, 500);
                 };
                 TodoArticleComponent = __decorate([
                     core_1.Component({

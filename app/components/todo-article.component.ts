@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Item } from '../item';
 
+
+
  @Component({
     selector: 'todo-article',
     inputs: ['item'],
@@ -9,8 +11,12 @@ import { Item } from '../item';
  }) 
 export class TodoArticleComponent { 
   item: Item; 
+
   setCompleted(item: Item, checked: boolean) 
   { 
-    item.completed = checked;
+   setTimeout(() => {  
+  item.completed = checked;;
+}, 500)
+    
    } 
   }
