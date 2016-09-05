@@ -1,6 +1,6 @@
-# ng-book 2: Simple Reddit-like App
+# ng-book 2: Simple Todo App
 
-> A simple voting app that resembles a minimal-reddit link voting app in Angular 2.
+> A simple todo app to help you stay organized. Developed in Angular 2.
 
 ## Dependencies
 
