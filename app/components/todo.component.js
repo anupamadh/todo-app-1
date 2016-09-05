@@ -25,16 +25,15 @@ System.register(['../item', '@angular/core', '../services/article.service'], fun
             }],
         execute: function() {
             TodoApp = (function () {
-                function TodoApp(_articleService) {
-                    this._articleService = _articleService;
+                // constructor(private _articleService: ArticleService){
+                // }
+                function TodoApp() {
+                    this.items = [];
                 }
                 TodoApp.prototype.addItem = function (title) {
                     console.log("Adding article title: " + title.value);
                     this.items.push(new item_1.Item(title.value, false));
                     title.value = '';
-                };
-                TodoApp.prototype.ngOnInit = function () {
-                    this.items = this._articleService.getArticles();
                 };
                 TodoApp = __decorate([
                     core_1.Component({
@@ -42,7 +41,7 @@ System.register(['../item', '@angular/core', '../services/article.service'], fun
                         templateUrl: 'app/components/views/todo.html',
                         providers: [article_service_1.ArticleService]
                     }), 
-                    __metadata('design:paramtypes', [article_service_1.ArticleService])
+                    __metadata('design:paramtypes', [])
                 ], TodoApp);
                 return TodoApp;
             }());

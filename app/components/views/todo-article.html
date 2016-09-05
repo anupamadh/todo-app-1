@@ -7,7 +7,7 @@
     <nav class="level">
       <div class="level-left">
         <a class="level-item">
-          <input type="checkbox" #chkbox [checked]="item.completed" (click)="setCompleted(item, chkbox.checked)">
+          <input type="checkbox" #chkbox  (click)="setCompleted(item, chkbox.checked)">
         </a>
         <div class="level-item">
           <span> {{item.completed ? 'Is Done' : 'Working on it' }}</span>
